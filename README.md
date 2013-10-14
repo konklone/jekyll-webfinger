@@ -28,7 +28,7 @@ eric@konklone.com:
   website: https://konklone.com
 ```
 
-This will create a URL at `/.well-known/webfinger` that returns:
+When your Jekyll site is built, it will create a URL at `/.well-known/webfinger` that returns:
 
 ```json
 {
@@ -44,6 +44,14 @@ This will create a URL at `/.well-known/webfinger` that returns:
   ]
 }
 ```
+
+The response will actually be compact (not indented, like the above example).
+
+### Caveats
+
+* Webfinger **requires HTTPS**. If you set this up on a non-secure website (`http://`), be prepared for most Webfinger clients to not find your data.
+* Since this is static file hosting, the query string is being ignored. So **all Webfinger requests will return the same data**. This in violation of the spec, but I'm not aware of how else to implement Webfinger using static files.
+* It's on you to configure your web server to set the `Content-Type` to `application/jrd+json` for `/.well-known/webfinger`. If you don't, it will probably be set et `application/octet-stream`, which is in violation of the spec (though most clients will probably still parse it fine).
 
 ### MIT License
 
