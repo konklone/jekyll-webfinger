@@ -51,7 +51,7 @@ The response will actually be compact (not indented, like the above example).
 
 * Webfinger **requires HTTPS**. If you set this up on a non-secure website (`http://`), be prepared for most Webfinger clients to not find your data.
 * Since this is static file hosting, the query string is being ignored. So **all Webfinger requests will return the same data**. This in violation of the spec, but I'm not aware of how else to implement Webfinger using static files.
-* It's on you to configure your web server to set the `Content-Type` to `application/jrd+json` for `/.well-known/webfinger`. If you don't, it will probably be set et `application/octet-stream`, which is in violation of the spec (though most clients will probably still parse it fine).
+* It's on you to configure your web server to set the `Content-Type` to `application/jrd+json` for `/.well-known/webfinger`. If you don't, it will probably be set to `application/octet-stream`, which is in violation of the spec (though most clients will probably still parse it fine).
 * As I said at the top, this **won't work on Github Pages** unless you pre-build the site yourself. Github blocks all plugins during its build process, so you can only use `jekyll-webfinger` if you build the site yourself.
 
 ### MIT License
