@@ -1,4 +1,4 @@
-### A Jekyll plugin for Webfinger.
+## A Webfinger plugin for Jekyll.
 
 An easy Jekyll plugin for adding Webfinger support to your domain.
 
