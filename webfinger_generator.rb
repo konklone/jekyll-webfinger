@@ -1,4 +1,4 @@
-# Webfinger config Generator.
+# Webfinger data generator.
 #
 # Generates a /.well-known/webfinger endpoint that responds with
 # the details given in _webfinger.yml (in the root of the project).
